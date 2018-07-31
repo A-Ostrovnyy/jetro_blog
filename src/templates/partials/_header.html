@@ -1,1 +1,17 @@
-<p>Hello from partials/_header.html</p>
+<header>
+    <div class="container">
+        <div class="logo">jet<span class="logo--end">ro</span></div>
+        <nav class="main__nav"> 
+            <ul>
+                {% import "data/nav.html" as nav %}
+
+                {% for items in nav.links %}
+                <li class="nav__list__item nav__list__item--isactive">
+                    <a href="#" class="nav__list__link">{{items.title}}</a>
+                </li>
+                {% endfor %}
+                
+            </ul>
+        </nav>
+    </div>
+</header>

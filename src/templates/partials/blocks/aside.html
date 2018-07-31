@@ -1,0 +1,29 @@
+<aside class="aside__additional">
+    <div class="aside__about">
+        <h4 class="aside__title">About jetro</h4>
+        <p class="aside__text">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident sapiente corrupti laboriosam? Vel itaque dolores, porro quas voluptas, provident velit ducimus non quia placeat fuga soluta sapiente iusto optio fugiat!
+        </p>
+    </div>
+    <div class="aside__catagories">
+        <h4 class="aside__title">categories</h4>
+        <div class="aside__link">
+            <a href="#" class="aside__link__item"></a>
+
+            {% import "data/link.html" as links %}
+
+            {% for item in links.links %}
+                <a href="#" class="aside__link__item">
+                    {{item.title}} ({{item.count}})
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="aside__gallery">
+        <h4 class="aside__title">photo gallery</h4>
+        <div class="aside__photo">
+
+            
+        </div>
+    </div>
+</aside>
