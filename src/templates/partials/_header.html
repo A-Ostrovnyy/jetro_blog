@@ -1,13 +1,13 @@
 <header>
-    <div class="container">
-        <div class="logo">jet<span class="logo--end">ro</span></div>
-        <nav class="main__nav"> 
-            <ul>
+    <div class="container container--header">
+        <a href="/" class="logo">jet<span class="logo--end">ro</span></a>
+        <nav class="nav"> 
+            <ul class="nav__list">
                 {% import "data/nav.html" as nav %}
 
                 {% for items in nav.links %}
-                <li class="nav__list__item nav__list__item--isactive">
-                    <a href="#" class="nav__list__link">{{items.title}}</a>
+                <li class="nav__item nav__item--isactive">
+                    <a href="#" class="nav__link">{{items.title}}</a>
                 </li>
                 {% endfor %}
                 

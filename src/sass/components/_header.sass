@@ -1,0 +1,44 @@
+.container--header
+    padding-top: 10px
+    margin-bottom: 20px
+
+.logo
+    color: $accent
+    font-size: 36px
+    text-decoration: none
+
+    &:hover
+        text-decoration: underline
+
+    &--end
+        color: $pink-light
+
+.nav
+    font-family: $bebas
+    font-size: 16px
+    padding-top: 20px
+
+    &__list
+        margin: 0
+        padding: 0
+        list-style: none
+        display: flex
+        flex-direction: row
+        justify-content: flex-end
+
+    &__item
+        margin-left: 30px
+
+    &__link
+        text-decoration: none
+        color: $nav
+
+        &:first-child
+            margin-left: 0
+
+        &:hover
+            text-decoration: underline
+            color: darken($nav, 50)
+
+        &--isactive
+            color: $accent

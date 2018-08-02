@@ -1,6 +1,6 @@
 <main>
     <div class="container">
-        <h2 class="main__title">BLog</h2>
+        <h2 class="title">blog</h2>
         <div class="posts">
             <div class="posts__container">
 
@@ -10,28 +10,31 @@
                 <section class="post">
                     <img src="{{items.img}}" alt="post image" class="post__img">
                     <div class="post__preview"> 
-                        <div class="post__aside__info">
+                        <div class="post__data__info">
                             <div>
-                                <h4 class="post__aside__title">date</h4>
-                                <p class="post__aside__text">{{items.date}}</p>
+                                <h4 class="post__data__title">date</h4>
+                                <p class="post__data__text">{{items.date}}</p>
                             </div>
                             <div>
-                                <h4 class="post__aside__title">Tags</h4>
-                                <p class="post__aside__text">
-                                    <a href="#" class="post__aside__link">{{items.tag1}}</a>
-                                    <a href="#" class="post__aside__link">{{items.tag2}}</a>
+                                <h4 class="post__data__title">Tags</h4>
+                                <p class="post__data__text">
+                                    <a href="#" class="post__data__link">{{items.tag1}}</a>
+                                    <a href="#" class="post__data__link">{{items.tag2}}</a>
                                 </p>
                             </div>
                             <div>
-                                <h4 class="post__aside__title">comments</h4>
-                                <a href="#" class="post__aside__text">{{items.comments}}</a>
+                                <h4 class="post__data__title">comments</h4>
+                                <a href="#" class="post__data__text">{{items.comments}}</a>
                             </div>
                         </div>
                         <div class="post__content">
                             <h3 class="post__content__title">{{items.title}}</h3>
                             <div class="post__content__text">
                                 <p>
-                                    {{items.text}}
+                                    {{items.text1}}
+                                </p>
+                                <p>
+                                    {{items.text2}}
                                 </p>
                             </div>
                         </div>
@@ -41,7 +44,7 @@
 
                 <section class="post post__simple">
                     <p class="post__simple__text">
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum, doloremque! Deleniti quis earum dignissimos similique molestiae, soluta expedita temporibus. Saepe, error animi veniam alias ipsam fuga earum vel molestiae veritatis.Porro dicta earum quod dolores? Expedita voluptatibus at vero deserunt necessitatibus dignissimos autem, quae libero magnam, nesciunt adipisci a, et tempore tempora fugit quod porro neque consequuntur dolorum corporis inventore.
+                        Write anything you want here in this quotable area. Something unique you want people to learn about your website or some cool random fact. Its totaly up to you.
                     </p>
                 </section>
 
@@ -50,18 +53,18 @@
                     <a href="#" class="post__content__link">www.bestpsdfreebies.com</a>
                     <div class="post__content__text">
                         <p>
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus non voluptate, odit adipisci consectetur, beatae ipsa error iste dolores neque quae quo dicta debitis! Debitis et sunt atque aut excepturi?Modi laudantium quidem dignissimos nulla dolore. Sed voluptatibus sunt non ab accusantium nobis harum, dicta cumque ea dolorem quidem laborum at commodi cupiditate reiciendis officia illo quis! Asperiores, aperiam libero.
+                            Lorem ipsum dolor sit amet, sit an molestie neglegentur concludaturque. Possim hendrerit in usu. Iriure delectus mea at, vis dicit laudem ex, vel eu possim imperdiet consequuntur. Brute ipsum tincidunt vim ei.
                         </p>
                     </div>
                 </section>
                 <div class="pagination">
-                    <span class="pagination__item">1</span>
-                    <span class="pagination__item">2</span>
-                    <span class="pagination__item">3</span>
+                    <a href="#" class="pagination__item pagination__item--isactive">1</a>
+                    <a href="#" class="pagination__item">2</a>
+                    <a href="#" class="pagination__item">3</a>
                 </div>
             </div>
+            {% include "partials/blocks/aside.html" %}
         </div>
-        {% include "partials/blocks/aside.html" %}
     </div>
 </main>
 
