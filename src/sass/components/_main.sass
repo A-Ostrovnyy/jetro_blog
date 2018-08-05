@@ -1,0 +1,296 @@
+main
+    overflow: hidden
+    
+.title
+    display: block
+    height: 60px
+    max-width: 940px
+    background-color: $accent
+    font-family: $bebas
+    text-transform: uppercase
+    color: $white
+    font-size: 24px
+    position: relative
+    padding: 10px 20px
+    margin-bottom: 20px
+
+    &::before,
+    &::after
+        content: ''
+        height: 60px
+        background-color: $pink-light
+        width: 100%
+        display: block
+        position: absolute
+        top: 0
+
+    &:after
+        margin-left: 10px
+        left: 100%
+
+    &::before
+        margin-right: 10px
+        right: 100%
+
+.post
+    position: relative
+
+    &::after
+        content: ''
+        display: block
+        width: 100%
+        height: 15px
+        background-image: url(../img/post_pt.jpg)
+        margin-bottom: 50px
+
+    &__icon
+        width: 75px
+        height: 75px
+        background-color: $accent
+        position: absolute
+        top: 0
+        left: -85px
+        display: flex
+        justify-content: space-around
+        align-items: center
+        font-size: 28px
+
+        +r(1115)
+            display: none
+
+    &__media
+        position: relative
+        margin-bottom: 20px
+
+        &:hover .slick-arrow
+            opacity: 1
+            transition: opacity .3s ease-in
+
+        img
+            object-fit: cover
+            width: 100%
+
+        .slick-arrow
+            position: absolute
+            top: 50%
+            transform: translateY(-50%)
+            z-index: 3
+            width: 36px
+            height: 52px
+            font-size: 0
+            opacity: 0
+
+        .slick-prev::before,
+        .slick-next::before
+            content: ""
+            position: absolute
+            width: 200%
+            height: 200%
+            top: -50%
+            left: -50%
+            z-index: -1
+            background: url("../img/arrow.png") no-repeat 50% 50%
+
+        .slick-prev
+            background-color: transparent
+            left: 20px
+            &::before
+                transform: rotate(-90deg)
+
+        .slick-next
+            background-color: transparent
+            right: 20px
+            &::before
+                transform: rotate(90deg)
+
+    &__video
+        position:relative
+        padding: 56.25% 0 0 0
+
+        iframe
+            position: absolute
+            top: 0
+            left: 0
+            width: 100%
+            height: 100%
+
+    &__data
+
+        &__info
+            min-width: 145px
+            padding-top: 20px
+            align-items: flex-start
+            font-size: 12px
+
+            +r(1000)
+                font-size: 16px
+            
+            +r(800)
+                display: flex
+                flex-direction: row
+                justify-content: space-around
+                font-size: 20px
+
+        &__title
+            text-transform: uppercase
+            color: $accent
+            font-family: $bebas
+            margin-bottom: 10px
+            font-size: inherit
+
+        &__text
+            color: $nav
+            font-family: $helvetica
+            font-size: inherit
+            margin-bottom: 10px
+            text-decoration: none
+
+            &:hover
+                text-decoration: underline
+                color: darken($nav, 75)
+
+        &__link
+            text-decoration: none
+            color: $nav
+            margin-left: 5px
+
+            &::before
+                content: '|'
+                color: inherit
+                font-size: inherit
+                margin-right: 5px
+
+            &:first-child
+                margin-left: 0
+                padding: 0
+
+                &::before
+                    content: ''
+                    font-size: 0
+
+            &:hover
+                text-decoration: underline
+                color: darken($nav, 50)
+
+            &:active
+                color: $accent
+
+    &__content
+        padding: 0
+        margin-bottom: 10px
+        text-align: left
+
+        &__title
+            text-transform: uppercase
+            color: $accent
+            font-size: 18px
+            font-family: $bebas
+            margin-bottom: 10px
+
+            +r(1000)
+                font-size: 20px
+            
+            +r(800)
+                font-size: 26px
+
+        &__text
+            color: $nav
+            font-family: $helvetica
+            font-size: 12px
+            margin-bottom: 50px
+            color: $primer
+
+            & > p
+                margin-bottom: 15px
+                line-height: 1.6
+
+            +r(1000)
+                font-size: 18px
+            
+            +r(800)
+                font-size: 22px
+
+        &__link
+            text-decoration: none
+            color: $nav
+            position: relative
+            top: -10px
+
+            &:hover
+                text-decoration: underline
+                color: darken($nav, 50)
+
+            &:active
+                color: $accent
+
+    &__preview
+        padding-bottom: 20px
+        +r(800)
+            display: flex
+            flex-direction: column
+
+
+    &__simple
+
+        &__text
+            background-color: $quote_bg
+            font-style: italic
+            padding-top: 25px
+            padding-right: 40px
+            padding-bottom: 20px
+            padding-left: 80px
+            display: inline-block
+            margin-bottom: 50px
+            position: relative
+            letter-spacing: .4px
+
+            & > .icon-icon-4
+                fill: $accent
+                position: absolute
+                top: 20px
+                left: 37px
+                font-size: 20px
+                color: $accent
+
+                +r(1000)
+                    font-size: 24px
+            
+                +r(800)
+                    font-size: 28px
+
+            +r(1000)
+                font-size: 18px
+            
+            +r(800)
+                font-size: 22px
+
+.pagination
+    display: grid
+    grid-template-columns: repeat(3, minmax(30px, max-content))
+    grid-gap: 5px
+    margin-bottom: 50px
+
+    +r(1000)
+        justify-content: center
+        margin-bottom: 50px
+
+
+    &__item
+        font-family: $bebas
+        color: $white
+        font-size: 14px
+        background-color: $pink-light
+        text-align: center
+        vertical-align: middle
+        padding: 5px
+        min-width: 30px
+        min-height: 30px
+        text-decoration: none
+
+        &:hover
+            background-color: darken($pink-light, 35)
+
+        &--isactive
+            background-color: $accent
+
+

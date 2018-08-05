@@ -1,0 +1,153 @@
+.container--header
+    padding-top: 10px
+    margin-bottom: 20px
+    position: relative
+
+.logo
+    color: $accent
+    font-size: 36px
+    text-decoration: none
+
+    &:hover
+        text-decoration: underline
+
+    &--end
+        color: $pink-light
+
+.nav
+    font-family: $bebas
+    font-size: 16px
+    padding-top: 20px
+
+    +r(1000)
+        position: absolute
+        top: -500px
+        right: 0
+        z-index: 5
+        opacity: 1
+
+    &__list
+        margin: 0
+        padding: 0
+        list-style: none
+        display: flex
+        flex-direction: row
+        justify-content: flex-end
+
+        +r(1000)
+            flex-direction: column
+            justify-content: flex-start
+            font-size: 45px
+            text-align: right
+            color: $accent
+
+        &::after
+            content: ''
+            display: none
+            width: 100vw
+            height: 100%
+            position: absolute
+            right: 0
+            background-color: $quote_bg
+            will-change: opacity
+            z-index: 5
+            opacity: .85
+
+            +r(1000)
+                display: block
+
+    &__item
+        margin-left: 30px
+        color: $nav
+
+        +r(1000)
+            margin-bottom: 30px
+            margin-right: 40px
+            z-index: 6
+            color: inherit
+
+        &--isactive
+            color: $accent
+
+    &__link
+        text-decoration: none
+        color: inherit
+
+        &:first-child
+            margin-left: 0
+
+        &:hover
+            text-decoration: underline
+            color: darken($nav, 50)
+
+.hamburger
+    display: none
+    cursor: pointer
+    width: 40px
+    margin-top: -15px
+    padding: 20px 0
+    z-index: 5
+
+    +r(1000)
+        display: block
+        position: absolute
+        right: 30px
+        bottom: 0
+
+    &__item::before,
+    &__item::after
+        content: ''
+        position: relative
+
+    &__item,
+    &__item::before,
+    &__item::after
+        display: block
+        width: 100%
+        height: 6px
+        background-color: $accent
+        opacity: 1
+        will-change: opacity
+        border-radius: 3px
+
+    &__item::before
+        top: -12px
+
+    &__item::after
+        bottom: -6px
+
+.menu-open .hamburger__item,
+.menu-close .hamburger__item
+
+.menu-open .hamburger__item
+    background-color: $accent
+
+.menu-open .hamburger__item::before
+    top: -12px
+
+.menu-open .hamburger__item::after
+    bottom: -6px
+
+.menu-close .hamburger__item::after
+    transform: rotate(45deg)
+    top: -3px
+
+.menu-close .hamburger__item
+    background-color: transparent
+
+.menu-close .hamburger__item::before
+    transform: rotate(-45deg)
+    top: 3px
+
+.is-active
+    display: block
+    transform: translateY(550px)
+    transition: transform .3s ease-in
+
+.is-hidden
+    transform: translateY(-500px)
+    transition: transform .3s ease-in
+
+
+.visible
+    display: block

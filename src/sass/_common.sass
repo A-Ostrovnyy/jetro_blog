@@ -1,5 +1,30 @@
++font(bebas, bebas)
+
++font(helvetica, helvetica)
+
+@font-face
+    font-family: helveticanueu
+    src: url("../fonts/helveticaneue-bold.woff2") format("woff2"), url("../fonts/helveticaneue-bold.woff") format("woff")
+    font-weight: 700
+    font-style: normal
+    font-display: swap
+
+@font-face
+    font-family: lg
+    src: url("../fonts/lg.woff") format("woff")
+    font-style: normal
+    font-display: swap
+
+header
+	font-family: bebas
+
 body
 	background: #FFF
-	+css-lock(16, 50, 600, 1000)
 	line-height: 1.4
+    font-family: $helvetica
 
+html
+    font-size: 12px
+    font-family: $helvetica
+    color: $primer
+    background-image: url(../img/bg.jpg)

@@ -1,0 +1,121 @@
+{% set posts = [
+    {
+        icon: "icon-1",
+        slider: "img/hero.jpg",
+        postinfo: "true",
+        title: "Top  WordPress  Themes  of  2012",
+        text1: "Lorem ipsum dolor sit amet, sit an molestie neglegentur concludaturque. Possim hendrerit in usu. Iriure delectus mea at, vis dicit laudem ex, vel eu possim imperdiet consequuntur. Brute ipsum tincidunt vim ei. Ne eos vidisse splendide instructior. Mei no latine praesent forensibus, te sed habemus tacimates, ad ipsum officiis constituto usu.",
+        text2: "Maecenas ipsum metus, semper hendrerit varius mattis, congue sit amet tellus. Aliquam ullamcorper dui sed magna posuere ut elementum enim rutrum. Nam mi erat, porta id ultrices nec, pellentesque vel nunc. Cras varius fermentum iaculis  ..."
+    },
+    {
+        icon: "icon-2",
+        img: "img/post_1.jpg",
+        postinfo: "true",
+        title: "Jesus  Typography  Wallpaper  Giveaway!",
+        text1: "Lorem ipsum dolor sit amet, sit an molestie neglegentur concludaturque. Possim hendrerit in usu. Iriure delectus mea at, vis dicit laudem ex, vel eu possim imperdiet consequuntur. Brute ipsum tincidunt vim ei. Ne eos vidisse splendide instructior. Mei no latine praesent forensibus, te sed habemus tacimates, ad ipsum officiis constituto usu.",
+        text2: "Maecenas ipsum metus, semper hendrerit varius mattis, congue sit amet tellus. Aliquam ullamcorper dui sed magna posuere ut elementum enim rutrum. Nam mi erat, porta id ultrices nec, pellentesque vel nunc. Cras varius fermentum iaculis  ..."
+    },
+    {
+        icon: "icon-3",
+        video: "img/Video.jpg",
+        postinfo: "true",
+        title: "Big  Buck  Bunny  Trailer",
+        text1: "Lorem ipsum dolor sit amet, sit an molestie neglegentur concludaturque. Possim hendrerit in usu. Iriure delectus mea at, vis dicit laudem ex, vel eu possim imperdiet consequuntur. Brute ipsum tincidunt vim ei. Ne eos vidisse splendide instructior. Mei no latine praesent forensibus, te sed habemus tacimates, ad ipsum officiis constituto usu.",
+        text2: "Maecenas ipsum metus, semper hendrerit varius mattis, congue sit amet tellus. Aliquam ullamcorper dui sed magna posuere ut elementum enim rutrum. Nam mi erat, porta id ultrices nec, pellentesque vel nunc. Cras varius fermentum iaculis  ..."
+    },
+    {
+        icon: "icon-4",
+        quote: "Write anything you want here in this quotable area. Something unique you want people to learn 
+        about your website or some cool random fact. Its totally up to you. "
+    },
+    {
+        icon: "icon-5",
+        title: "Some  of  the  best  freebies  on  the  web",
+        link_text: "www.bestpsdfreebies.com",
+        text1: "Lorem ipsum dolor sit amet, sit an molestie neglegentur concludaturque. Possim hendrerit in usu. Iriure delectus mea at, vis dicit laudem ex, vel eu possim imperdiet consequuntur. Brute ipsum tincidunt vim ei."
+    }
+] 
+%}
+
+<main>
+    <div class="container">
+        <h2 class="title">blog</h2>
+        <div class="posts">
+            <div class="posts__container">
+
+                {% for post in posts %}
+
+                <div class="post">
+                    <div class="post__icon" >
+                        {{mixins.icon(post.icon)}}
+                    </div>
+                    {% if post.slider or post.img or post.video %}
+                        <div class="post__media">
+
+                            {% if post.slider %}
+                                <div class="slider js-slider">
+                                    <div class="slider__item">
+                                        <img src="{{post.slider}}" alt="slider item">
+                                    </div>
+                                    <div class="slider__item">
+                                        <img src="img/post_1.jpg" alt="slider item">
+                                    </div>
+                                    <div class="slider__item">
+                                        <img src="img/Video.jpg" alt="slider item">
+                                    </div>
+                                </div>
+                            {% endif %} 
+
+                            {% if post.img %}
+                                <img src="{{post.img}}" alt="" class="post__img"> 
+                            {% endif %} 
+
+                            {% if post.video %}
+                                <div class="post__video">
+                                    <iframe src="https://player.vimeo.com/video/12860646?color=e8603c" frameborder="0" webkitallowfullscreen mozallowfullscreen
+                                        allowfullscreen></iframe>
+                                    <script src="https://player.vimeo.com/api/player.js"></script>
+                                </div>
+                            {% endif %}
+
+                        </div>
+                    {% endif %}
+
+                    <div class="post__preview">
+
+                        {% if post.postinfo %}
+                            {% include "partials/_post-info.html" %}
+                        {% endif %}
+
+                        <div class="post__content">
+                            <h2 class="post__content__title">{{post.title}}</h2>
+                            {% if post.link_text %}
+                            <a class="post__content__link" href="#">{{post.link_text}}</a>
+                            {% endif %}
+                            <div class="post__content__text">
+                                <p>{{post.text1}}</p>
+                                <p>{{post.text2}}</p>
+                            </div>
+                        </div>
+
+                        {% if post.quote %}
+                        <div class="post__simple__text">
+                            {{mixins.icon(post.icon)}}
+                            <p>{{post.quote}}</p>
+                        </div>
+                        {% endif %}
+
+                    </div>
+                </div>
+
+                {% endfor %} 
+                <div class="pagination">
+                    <a href="#" class="pagination__item pagination__item--isactive">1</a>
+                    <a href="#" class="pagination__item">2</a>
+                    <a href="#" class="pagination__item">3</a>
+                </div>
+            </div>
+            {% include "partials/_aside.html" %}
+        </div>
+    </div>
+</main>
