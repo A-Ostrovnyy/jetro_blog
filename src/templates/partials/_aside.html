@@ -21,15 +21,15 @@
     </div>
     <div class="aside__block">
         <h4 class="aside__title">photo gallery</h4>
-        <div class="aside__photo">
-            <div class="aside__photo__item"></div>
-            <div class="aside__photo__item"></div>
-            <div class="aside__photo__item"></div>
-            <div class="aside__photo__item"></div>
-            <div class="aside__photo__item"></div>
-            <div class="aside__photo__item"></div>
-            <div class="aside__photo__item"></div>
-            <div class="aside__photo__item"></div>
+        <div class="aside__photo" id="aniimated-thumbnials">
+
+            {% import "data/photo.html" as photo %}
+
+            {% for item in photo.images %}
+                <a href="{{item.img}}" class="aside__photo__item">
+                    <img src="{{item.img}}" alt="{{item.alt}}" class="aside__photo__img">
+                </a>
+            {% endfor %}
         </div>
     </div>
 </aside>

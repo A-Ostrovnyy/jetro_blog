@@ -1,7 +1,10 @@
+main
+    overflow: hidden
+    
 .title
     display: block
     height: 60px
-    width: 100%
+    max-width: 940px
     background-color: $accent
     font-family: $bebas
     text-transform: uppercase
@@ -30,7 +33,8 @@
         right: 100%
 
 .post
-    &::before
+    position: relative
+
     &::after
         content: ''
         display: block
@@ -39,24 +43,105 @@
         background-image: url(../img/post_pt.jpg)
         margin-bottom: 50px
 
+    &__icon
+        width: 75px
+        height: 75px
+        background-color: $accent
+        position: absolute
+        top: 0
+        left: -85px
+        display: flex
+        justify-content: space-around
+        align-items: center
+        font-size: 28px
+
+        +r(1115)
+            display: none
+
+    &__media
+        position: relative
+        margin-bottom: 20px
+
+        &:hover .slick-arrow
+            opacity: 1
+            transition: opacity .3s ease-in
+
+        img
+            object-fit: cover
+            width: 100%
+
+        .slick-arrow
+            position: absolute
+            top: 50%
+            transform: translateY(-50%)
+            z-index: 3
+            width: 36px
+            height: 52px
+            font-size: 0
+            opacity: 0
+
+        .slick-prev::before,
+        .slick-next::before
+            content: ""
+            position: absolute
+            width: 200%
+            height: 200%
+            top: -50%
+            left: -50%
+            z-index: -1
+            background: url("../img/arrow.png") no-repeat 50% 50%
+
+        .slick-prev
+            background-color: transparent
+            left: 20px
+            &::before
+                transform: rotate(-90deg)
+
+        .slick-next
+            background-color: transparent
+            right: 20px
+            &::before
+                transform: rotate(90deg)
+
+    &__video
+        position:relative
+        padding: 56.25% 0 0 0
+
+        iframe
+            position: absolute
+            top: 0
+            left: 0
+            width: 100%
+            height: 100%
+
     &__data
 
         &__info
             min-width: 145px
             padding-top: 20px
             align-items: flex-start
+            font-size: 12px
+
+            +r(1000)
+                font-size: 16px
+            
+            +r(800)
+                display: flex
+                flex-direction: row
+                justify-content: space-around
+                font-size: 20px
 
         &__title
             text-transform: uppercase
             color: $accent
             font-family: $bebas
             margin-bottom: 10px
-            font-size: 12px
+            font-size: inherit
 
         &__text
             color: $nav
             font-family: $helvetica
-            font-size: 12px
+            font-size: inherit
             margin-bottom: 10px
             text-decoration: none
 
@@ -91,8 +176,7 @@
                 color: $accent
 
     &__content
-        padding: 5px
-        padding-top: 20px
+        padding: 0
         margin-bottom: 10px
         text-align: left
 
@@ -102,6 +186,12 @@
             font-size: 18px
             font-family: $bebas
             margin-bottom: 10px
+
+            +r(1000)
+                font-size: 20px
+            
+            +r(800)
+                font-size: 26px
 
         &__text
             color: $nav
@@ -113,6 +203,12 @@
             & > p
                 margin-bottom: 15px
                 line-height: 1.6
+
+            +r(1000)
+                font-size: 18px
+            
+            +r(800)
+                font-size: 22px
 
         &__link
             text-decoration: none
@@ -129,6 +225,10 @@
 
     &__preview
         padding-bottom: 20px
+        +r(800)
+            display: flex
+            flex-direction: column
+
 
     &__simple
 
@@ -144,23 +244,36 @@
             position: relative
             letter-spacing: .4px
 
-            &::before
-                content: ''
-                width: 35px
-                height: 20px
-                display: block
-                background-image: url(../img/quotes.svg)
-                background-repeat: no-repeat
-                display: inline-block
+            & > .icon-icon-4
+                fill: $accent
                 position: absolute
-                left: 35px
-                font-size: 13px
+                top: 20px
+                left: 37px
+                font-size: 20px
+                color: $accent
 
+                +r(1000)
+                    font-size: 24px
+            
+                +r(800)
+                    font-size: 28px
+
+            +r(1000)
+                font-size: 18px
+            
+            +r(800)
+                font-size: 22px
 
 .pagination
     display: grid
     grid-template-columns: repeat(3, minmax(30px, max-content))
     grid-gap: 5px
+    margin-bottom: 50px
+
+    +r(1000)
+        justify-content: center
+        margin-bottom: 50px
+
 
     &__item
         font-family: $bebas

@@ -1,15 +1,22 @@
 <header>
     <div class="container container--header">
         <a href="/" class="logo">jet<span class="logo--end">ro</span></a>
-        <nav class="nav"> 
+        <div class="hamburger menu-open" id="js-btn">
+            <div class="hamburger__item"></div>
+        </div>
+        <nav class="nav "> 
             <ul class="nav__list">
                 {% import "data/nav.html" as nav %}
 
                 {% for items in nav.links %}
-                <li class="nav__item nav__item--isactive">
+                <li class="nav__item {% if items.class %} {{items.class}} {% endif %} ">
                     <a href="#" class="nav__link">{{items.title}}</a>
                 </li>
                 {% endfor %}
+
+                {% if items.class %}
+                        {{items.class}}
+                {% endif %}
                 
             </ul>
         </nav>

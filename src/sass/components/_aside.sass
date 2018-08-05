@@ -1,6 +1,17 @@
 .aside
     max-width: 220px
     padding-top: 5px
+    margin-left: 20px
+
+    +r(1000)
+        font-size: 18px
+        margin-left: 0
+
+    +r(950)
+        max-width: 100%
+
+    +r(800)
+        font-size: 22px
 
 
     &__block
@@ -23,6 +34,18 @@
             height: 17px
             width: 100%
             background-image: url(../img/post_pt.jpg)
+
+            +r(1000)
+                height: 26px
+                
+            +r(800)
+                height: 33px
+
+        +r(1000)
+            font-size: 18px
+            
+        +r(800)
+            font-size: 22px
 
     &__text
         line-height: 1.2
@@ -50,16 +73,29 @@
         grid-template-rows: repeat(2, 1fr)
         grid-gap: 5px
 
+        +r(950)
+            grid-template-columns: repeat(2,1fr)
+
+        +r(660)
+            grid-template-columns: 1fr
+
         &__item
-            background-color: $pink-light
             border: 1px solid $accent
+            background-color: $pink-light
             min-height: 50px
             min-width: 50px
-            box-sizing: border-box
             will-change: transform
             transition: transform .3s ease-in
-
+            width: 100%
+            cursor: pointer
+            object-fit: contain
+            display: flex
+            align-items: center
 
             &:hover
                 transform: scale(1.3)
                 z-index: 3
+
+        &__img
+            object-fit: contain
+            width: 100%

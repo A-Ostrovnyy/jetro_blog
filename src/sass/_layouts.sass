@@ -2,6 +2,9 @@
     max-width: 940px
     margin: 0 auto
 
+    +r(1000)
+        padding: 0 10px
+
     &--header
         display: flex
         flex-direction: row
@@ -12,8 +15,14 @@
     flex-direction: row
     justify-content: space-between
 
+    +r(950)
+        flex-direction: column
+
     &__container
         max-width: 670px
+
+        +r(950)
+            max-width: 100%
 
 .post
     &__preview

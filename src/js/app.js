@@ -1,3 +1,9 @@
-import sayHello from './lib/sayHello.js';
+import './menu';
 
-sayHello();
+import './slider';
+
+import './gallery';
+
+import './animation';
+
+
