@@ -11,7 +11,7 @@
     &:hover
         text-decoration: underline
 
-    &--end
+    &__end
         color: $pink-light
 
 .nav
@@ -116,26 +116,26 @@
     &__item::after
         bottom: -6px
 
-.menu-open .hamburger__item,
-.menu-close .hamburger__item
+.menu-isopen .hamburger__item,
+.menu-isclose .hamburger__item
 
-.menu-open .hamburger__item
+.menu-isopen .hamburger__item
     background-color: $accent
 
-.menu-open .hamburger__item::before
+.menu-isopen .hamburger__item::before
     top: -12px
 
-.menu-open .hamburger__item::after
+.menu-isopen .hamburger__item::after
     bottom: -6px
 
-.menu-close .hamburger__item::after
+.menu-isclose .hamburger__item::after
     transform: rotate(45deg)
     top: -3px
 
-.menu-close .hamburger__item
+.menu-isclose .hamburger__item
     background-color: transparent
 
-.menu-close .hamburger__item::before
+.menu-isclose .hamburger__item::before
     transform: rotate(-45deg)
     top: 3px
 
