@@ -1,31 +1,21 @@
-{% import "data/post-info.html" as data %}
+{% import "data/post-info.html" as data %} {% for items in data.info %}
 
-{% for items in data.info %}
-
-<div class="post__data__info">
+<div class="post__info">
 
     {% if items.date %}
-        <div>
-            <h4 class="post__data__title">date</h4>
-            <p class="post__data__text">{{items.date}}</p>
-        </div>
+        <h4 class="post__head">date</h4>
+        <p class="post__data">{{items.date}}</p>
     {% endif %}
-
     {% if items.tag1 and items.tag2 %}
-        <div>
-            <h4 class="post__data__title">tags</h4>
-            <p class="post__data__text">
-                <a href="#" class="post__data__link">{{items.tag1}}</a>
-                <a href="#" class="post__data__link">{{items.tag2}}</a>
-            </p>
-        </div>
+        <h4 class="post__head">tags</h4>
+        <p class="post__data">
+            <a href="#" class="post__url">{{items.tag1}}</a>
+            <a href="#" class="post__url">{{items.tag2}}</a>
+        </p>
     {% endif %}
-
     {% if items.comments %}
-        <div>
-            <h4 class="post__data__title">comments</h4>
-            <a href="#" class="post__data__text">{{items.comments}}</a>
-        </div>
+        <h4 class="post__head">comments</h4>
+        <a href="#" class="post__data">{{items.comments}}</a>
     {% endif %}
 
 </div>
