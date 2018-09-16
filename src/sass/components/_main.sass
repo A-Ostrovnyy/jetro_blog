@@ -1,4 +1,4 @@
-main
+.main
     overflow: hidden
     
 .title
@@ -114,114 +114,112 @@ main
             width: 100%
             height: 100%
 
+    &__info
+        min-width: 145px
+        padding-top: 20px
+        align-items: flex-start
+        font-size: 12px
+
+        +r(1000)
+            font-size: 16px
+        
+        +r(800)
+            display: flex
+            flex-direction: row
+            justify-content: space-around
+            font-size: 20px
+
+    &__head
+        text-transform: uppercase
+        color: $accent
+        font-family: $bebas
+        margin-bottom: 10px
+        font-size: inherit
+
     &__data
+        color: $nav
+        font-family: $helvetica
+        font-size: inherit
+        margin-bottom: 10px
+        text-decoration: none
 
-        &__info
-            min-width: 145px
-            padding-top: 20px
-            align-items: flex-start
-            font-size: 12px
+        &:hover
+            text-decoration: underline
+            color: darken($nav, 75)
 
-            +r(1000)
-                font-size: 16px
-            
-            +r(800)
-                display: flex
-                flex-direction: row
-                justify-content: space-around
-                font-size: 20px
+    &__url
+        text-decoration: none
+        color: $nav
+        margin-left: 5px
 
-        &__title
-            text-transform: uppercase
-            color: $accent
-            font-family: $bebas
-            margin-bottom: 10px
+        &::before
+            content: '|'
+            color: inherit
             font-size: inherit
+            margin-right: 5px
 
-        &__text
-            color: $nav
-            font-family: $helvetica
-            font-size: inherit
-            margin-bottom: 10px
-            text-decoration: none
-
-            &:hover
-                text-decoration: underline
-                color: darken($nav, 75)
-
-        &__link
-            text-decoration: none
-            color: $nav
-            margin-left: 5px
+        &:first-child
+            margin-left: 0
+            padding: 0
 
             &::before
-                content: '|'
-                color: inherit
-                font-size: inherit
-                margin-right: 5px
+                content: ''
+                font-size: 0
 
-            &:first-child
-                margin-left: 0
-                padding: 0
+        &:hover
+            text-decoration: underline
+            color: darken($nav, 50)
 
-                &::before
-                    content: ''
-                    font-size: 0
-
-            &:hover
-                text-decoration: underline
-                color: darken($nav, 50)
-
-            &:active
-                color: $accent
+        &:active
+            color: $accent
 
     &__content
         padding: 0
         margin-bottom: 10px
         text-align: left
 
-        &__title
-            text-transform: uppercase
-            color: $accent
+    &__title
+        text-transform: uppercase
+        color: $accent
+        font-size: 18px
+        font-family: $bebas
+        margin-bottom: 10px
+
+        +r(1000)
+            font-size: 20px
+        
+        +r(800)
+            font-size: 26px
+
+    &__text
+        color: $nav
+        font-family: $helvetica
+        font-size: 12px
+        margin-bottom: 50px
+        color: $primer
+
+        & > p
+            margin-bottom: 15px
+            line-height: 1.6
+
+        +r(1000)
             font-size: 18px
-            font-family: $bebas
-            margin-bottom: 10px
+        
+        +r(800)
+            font-size: 22px
 
-            +r(1000)
-                font-size: 20px
-            
-            +r(800)
-                font-size: 26px
+    &__link
+        text-decoration: none
+        color: $nav
+        position: relative
+        top: -10px
 
-        &__text
-            color: $nav
-            font-family: $helvetica
-            font-size: 12px
-            margin-bottom: 50px
-            color: $primer
+        &:hover
+            text-decoration: underline
+            color: darken($nav, 50)
 
-            & > p
-                margin-bottom: 15px
-                line-height: 1.6
-
-            +r(1000)
-                font-size: 18px
-            
-            +r(800)
-                font-size: 22px
-
-        &__link
-            text-decoration: none
-            color: $nav
-            position: relative
-            top: -10px
-
-            &:hover
-                text-decoration: underline
-                color: darken($nav, 50)
-
-            &:active
-                color: $accent
+        &:active
+            color: $accent
 
     &__preview
         padding-bottom: 20px

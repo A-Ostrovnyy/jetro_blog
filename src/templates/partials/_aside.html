@@ -1,33 +1,33 @@
 <aside class="aside">
     <div class="aside__block">
-        <h4 class="aside__title">About jetro</h4>
+        <h4 class="title__m">About jetro</h4>
         <p class="aside__text">
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident sapiente corrupti laboriosam? Vel itaque dolores, porro quas voluptas, provident velit ducimus non quia placeat fuga soluta sapiente iusto optio fugiat!
         </p>
     </div>
     <div class="aside__block">
-        <h4 class="aside__title">categories</h4>
-        <div class="aside__link">
-            <a href="#" class="aside__link__item"></a>
+        <h4 class="title__m">categories</h4>
+        <div class="category">
+            <a href="#" class="category__item"></a>
 
             {% import "data/link.html" as links %}
 
             {% for item in links.links %}
-                <a href="#" class="aside__link__item">
+                <a href="#" class="category__item">
                     {{item.title}} ({{item.count}})
                 </a>
             {% endfor %}
         </div>
     </div>
     <div class="aside__block">
-        <h4 class="aside__title">photo gallery</h4>
-        <div class="aside__photo" id="aniimated-thumbnials">
+        <h4 class="title__m">photo gallery</h4>
+        <div class="gallery" id="aniimated-thumbnials">
 
             {% import "data/photo.html" as photo %}
 
             {% for item in photo.images %}
-                <a href="{{item.img}}" class="aside__photo__item">
-                    <img src="{{item.img}}" alt="{{item.alt}}" class="aside__photo__img">
+                <a href="{{item.img}}" class="gallery__item">
+                    <img src="{{item.img}}" alt="{{item.alt}}" class="gallery__img">
                 </a>
             {% endfor %}
         </div>
